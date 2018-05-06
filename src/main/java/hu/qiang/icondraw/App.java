@@ -1,7 +1,7 @@
 /**
  * 
  */
-package hu.qiang.icondraw;
+package hu.qiang.icandraw;
 
 import java.util.Scanner;
 

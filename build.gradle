@@ -15,7 +15,7 @@ plugins {
 }
 
 // Define the main class for the application
-mainClassName = 'hu.qiang.icondraw.App'
+mainClassName = 'hu.qiang.icandraw.App'
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
