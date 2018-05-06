@@ -1,4 +1,4 @@
-#iCanDraw
+# iCanDraw
 A simple console version of a drawing program. 
 
 ## How to run:
@@ -8,3 +8,6 @@ A simple console version of a drawing program.
   `./gradlew installDist`
 1. Run the program:
   `java -jar build/install/iCanDraw/lib/iCanDraw.jar`
+
+## Note
+* This program runs on Java 8.
