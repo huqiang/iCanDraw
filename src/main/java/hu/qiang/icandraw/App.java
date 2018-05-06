@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 
 import hu.qiang.icandraw.commands.CommandFactory;
 import hu.qiang.icandraw.commands.CreateCanvasCommand;
+import hu.qiang.icandraw.commands.DrawCommand;
 import hu.qiang.icandraw.commands.ICommand;
 import hu.qiang.icandraw.commands.QuitCommand;
 import hu.qiang.icandraw.exceptions.InvalidCommandException;

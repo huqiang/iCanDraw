@@ -3,7 +3,6 @@
  */
 package hu.qiang.icandraw.commands;
 
-import hu.qiang.icandraw.DrawCommand;
 import hu.qiang.icandraw.exceptions.InvalidCommandParamException;
 import hu.qiang.icandraw.utils.NumberUtil;
 

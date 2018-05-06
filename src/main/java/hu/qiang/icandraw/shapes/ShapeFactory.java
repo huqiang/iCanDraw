@@ -3,8 +3,8 @@
  */
 package hu.qiang.icandraw.shapes;
 
-import hu.qiang.icandraw.DrawCommand;
 import hu.qiang.icandraw.commands.BucketFillCommand;
+import hu.qiang.icandraw.commands.DrawCommand;
 import hu.qiang.icandraw.commands.DrawLineCommand;
 import hu.qiang.icandraw.commands.DrawRectangleCommand;
 

@@ -47,6 +47,7 @@ public class Canvas implements ICanvas {
 		} else if (shape instanceof BucketFill) {
 			this.addBucketFill((BucketFill) shape);
 		}
+		this.shapes.push(shape);
 	}
 
 	private void addBucketFill(BucketFill bucket) {

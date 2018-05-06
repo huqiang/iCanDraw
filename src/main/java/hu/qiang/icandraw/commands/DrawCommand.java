@@ -1,9 +1,7 @@
 /**
  * 
  */
-package hu.qiang.icandraw;
-
-import hu.qiang.icandraw.commands.ICommand;
+package hu.qiang.icandraw.commands;
 
 /**
  * @author huqiang
