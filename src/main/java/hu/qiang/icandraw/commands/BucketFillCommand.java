@@ -42,8 +42,8 @@ public class BucketFillCommand implements DrawCommand {
 	}
 
 	@Override
-	public String getType() {
-		return "B";
+	public Command getType() {
+		return Command.FILL_BUCKET;
 	}
 
 }

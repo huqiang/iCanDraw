@@ -8,11 +8,10 @@ package hu.qiang.icandraw.commands;
  *
  */
 public class QuitCommand implements ICommand {
-	private static final String CMD_TYPE = "C";
 
 	@Override
-	public String getType() {
-		return CMD_TYPE;
+	public Command getType() {
+		return Command.QUIT;
 	}
 
 }

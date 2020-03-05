@@ -11,7 +11,6 @@ import hu.qiang.icandraw.utils.NumberUtil;
  *
  */
 public class CreateCanvasCommand implements ICommand {
-	private static final String CMD_TYPE = "C";
 	private int height;
 	private int width;
 
@@ -35,8 +34,8 @@ public class CreateCanvasCommand implements ICommand {
 	}
 
 	@Override
-	public String getType() {
-		return CMD_TYPE;
+	public Command getType() {
+		return Command.CREATE_CANVAS;
 	}
 	
 	

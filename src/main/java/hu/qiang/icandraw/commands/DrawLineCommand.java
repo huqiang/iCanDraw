@@ -44,8 +44,8 @@ public class DrawLineCommand implements DrawCommand {
 	}
 
 	@Override
-	public String getType() {
-		return "L";
+	public Command getType() {
+		return Command.DRAW_LINE;
 	}
 
 }

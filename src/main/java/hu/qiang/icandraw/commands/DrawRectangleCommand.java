@@ -47,8 +47,8 @@ public class DrawRectangleCommand implements DrawCommand {
 	}
 
 	@Override
-	public String getType() {
-		return "R";
+	public Command getType() {
+		return Command.DRAW_RECTANGLE;
 	}
 
 }
