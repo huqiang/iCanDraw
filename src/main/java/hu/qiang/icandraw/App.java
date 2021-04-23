@@ -50,14 +50,18 @@ public class App {
 	}
 
 	public void start() {
-		System.out.println(this.getHelp());
+		displayHelpMessage(this.getHelp());
 		this.scanner = new Scanner(System.in);
 		String command = "";
 		while (true) {
-			System.out.print("enter command: ");
+			displayHelpMessage("enter command: ");
 			command = this.scanner.nextLine();
 			this.execute(command);
 		}
+	}
+
+	private void displayHelpMessage(String help) {
+		System.out.println(help);
 	}
 
 	private void execute(String commandLine) {
@@ -65,11 +69,11 @@ public class App {
 		try {
 			command = this.commandFactory.getCommand(commandLine);
 		} catch (InvalidCommandException e) {
-			System.out.println("Wrong command!");
-			System.out.println(this.getHelp());
+			displayErrorMessage("Wrong command!");
+			displayHelpMessage(this.getHelp());
 		} catch (InvalidCommandParamException e) {
-			System.out.println("Wrong parameters: " + e.getMessage());
-			System.out.println(this.getHelp());
+			displayErrorMessage("Wrong parameters: " + e.getMessage());
+			displayHelpMessage(this.getHelp());
 		}
 		if (command instanceof CreateCanvasCommand) {
 			this.createNewCanvas((CreateCanvasCommand) command);
@@ -87,15 +91,19 @@ public class App {
 
 	}
 
+	private void displayErrorMessage(String msg) {
+		System.out.println(msg);
+	}
+
 	private void draw(DrawCommand command) {
 		if (this.canvas == null) {
-			System.out.println("You need to create a canvas first");
+			displayErrorMessage("You need to create a canvas first");
 			return;
 		}
 		try {
 			this.canvas.addShape(this.shapeFactory.getShape(command));
 		} catch (InvalidShapeException e) {
-			System.out.println(
+			displayErrorMessage(
 					"Can not add the shape to canvas: " + e.getMessage());
 		}
 	}
@@ -112,7 +120,7 @@ public class App {
 
 	private void quit() {
 		this.scanner.close();
-		System.out.println("See you soon!");
+		displayHelpMessage("See you soon!");
 		System.exit(0);
 	}
 
