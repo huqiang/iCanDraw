@@ -40,12 +40,18 @@ public class Canvas implements ICanvas {
 
 	@Override
 	public void addShape(IShape shape) {
-		if (shape instanceof Line) {
-			this.addLine((Line) shape);
-		} else if (shape instanceof Rectangle) {
-			this.addRectangle((Rectangle) shape);
-		} else if (shape instanceof BucketFill) {
-			this.addBucketFill((BucketFill) shape);
+		switch (shape.getShapeName()){
+			case LINE:
+				this.addLine((Line)shape);
+				break;
+			case RECTANGLE:
+				this.addRectangle((Rectangle) shape);
+				break;
+			case BUCKET:
+				this.addBucketFill((BucketFill) shape);
+				break;
+			default:
+				throw new InvalidShapeException("Unsupported shape: " + shape.getShapeName());
 		}
 		this.shapes.push(shape);
 	}

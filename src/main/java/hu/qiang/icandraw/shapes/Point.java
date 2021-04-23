@@ -26,4 +26,9 @@ public class Point implements IShape {
 	public int getY() {
 		return this.y;
 	}
+
+	@Override
+	public ShapeName getShapeName() {
+		return ShapeName.POINT;
+	}
 }

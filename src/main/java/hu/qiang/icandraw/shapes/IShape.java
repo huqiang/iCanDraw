@@ -8,5 +8,9 @@ package hu.qiang.icandraw.shapes;
  *
  */
 public interface IShape {
+    enum ShapeName {
+        POINT, LINE, RECTANGLE, BUCKET
+    }
 
+    ShapeName getShapeName();
 }

@@ -32,6 +32,10 @@ public class BucketFill implements IShape {
 	public char getCharacter() {
 		return character;
 	}
-	
-	
+
+
+	@Override
+	public ShapeName getShapeName() {
+		return ShapeName.BUCKET;
+	}
 }

@@ -52,4 +52,8 @@ public class Rectangle implements IShape {
 	}
 
 
+	@Override
+	public ShapeName getShapeName() {
+		return ShapeName.RECTANGLE;
+	}
 }

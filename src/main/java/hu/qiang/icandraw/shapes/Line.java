@@ -55,4 +55,8 @@ public class Line implements IShape {
 		return this.y2;
 	}
 
+	@Override
+	public ShapeName getShapeName() {
+		return ShapeName.LINE;
+	}
 }

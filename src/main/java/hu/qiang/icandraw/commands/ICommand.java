@@ -8,9 +8,9 @@ package hu.qiang.icandraw.commands;
  *
  */
 public interface ICommand {
-	public enum Command {
+	enum Command {
 		CREATE_CANVAS, DRAW_LINE, DRAW_RECTANGLE, FILL_BUCKET, QUIT
 	}
 
-	public Command getType();
+	Command getType();
 }
