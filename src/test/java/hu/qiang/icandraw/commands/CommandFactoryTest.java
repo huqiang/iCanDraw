@@ -21,13 +21,13 @@ public class CommandFactoryTest {
 
     @Test
     public void getCommand() {
-        assertEquals(factory.getCommand("c 20 5").getType(), ICommand.Command.CREATE_CANVAS);
+        assertEquals(factory.getCommand("c 20  5").getType(), ICommand.Command.CREATE_CANVAS);
 
-        assertEquals(factory.getCommand("L 1 1 1 10").getType(), ICommand.Command.DRAW_LINE);
+        assertEquals(factory.getCommand("L 1 1  1 10").getType(), ICommand.Command.DRAW_LINE);
 
-        assertEquals(factory.getCommand("r 1 1 5 5").getType(), ICommand.Command.DRAW_RECTANGLE);
+        assertEquals(factory.getCommand("r 1  1 5 5").getType(), ICommand.Command.DRAW_RECTANGLE);
 
-        assertEquals(factory.getCommand("b 1 1   #").getType(), ICommand.Command.FILL_BUCKET);
+        assertEquals(factory.getCommand("b 1  1   #").getType(), ICommand.Command.FILL_BUCKET);
 
         assertEquals(factory.getCommand("q").getType(), ICommand.Command.QUIT);
     }

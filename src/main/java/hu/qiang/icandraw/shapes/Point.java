@@ -4,6 +4,7 @@
 package hu.qiang.icandraw.shapes;
 
 import com.google.common.base.Objects;
+import hu.qiang.icandraw.canvas.ICanvas;
 import hu.qiang.icandraw.utils.Validator;
 
 /**
@@ -26,6 +27,13 @@ public class Point implements IShape {
 
     public int getY() {
         return this.y;
+    }
+
+    @Override
+    public void render(ICanvas canvas) {
+        char[][] canvasArray = canvas.getCanvasArray();
+        this.checkIsOutside(this.getX(), this.getY(), canvasArray);
+        canvasArray[getY() - 1][getX() - 1] = canvas.getLineCharacter();
     }
 
     @Override

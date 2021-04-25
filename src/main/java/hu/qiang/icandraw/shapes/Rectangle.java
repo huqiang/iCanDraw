@@ -4,6 +4,7 @@
 package hu.qiang.icandraw.shapes;
 
 import com.google.common.base.Objects;
+import hu.qiang.icandraw.canvas.ICanvas;
 import hu.qiang.icandraw.exceptions.InvalidCommandParamException;
 import hu.qiang.icandraw.utils.Validator;
 
@@ -52,6 +53,18 @@ public class Rectangle implements IShape {
         return this.y2;
     }
 
+
+    @Override
+    public void render(ICanvas canvas) {
+        //Top
+        new Line(this.getX1(), this.getY1(), this.getX2(), this.getY1()).render(canvas);
+        // Left
+        new Line(this.getX1(), this.getY1(), this.getX1(), this.getY2()).render(canvas);
+        // Right
+        new Line(this.getX2(), this.getY1(), this.getX2(), this.getY2()).render(canvas);
+        // Bottom
+        new Line(this.getX1(), this.getY2(), this.getX2(), this.getY2()).render(canvas);
+    }
 
     @Override
     public ShapeName getShapeName() {

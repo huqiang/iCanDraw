@@ -1,13 +1,17 @@
 package hu.qiang.icandraw.canvas;
 
 import hu.qiang.icandraw.exceptions.InvalidShapeException;
-import hu.qiang.icandraw.shapes.*;
+import hu.qiang.icandraw.shapes.BucketFill;
+import hu.qiang.icandraw.shapes.Line;
+import hu.qiang.icandraw.shapes.Point;
+import hu.qiang.icandraw.shapes.Rectangle;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CanvasTest {
     private Canvas canvas;
@@ -194,5 +198,23 @@ public class CanvasTest {
         this.exception.expect(InvalidShapeException.class);
         Rectangle rectangle1 = new Rectangle(1, 1, 6, 6);
         this.canvas.addShape(rectangle1);
+    }
+
+    @Test
+    public void testLineCharacter() {
+        // default line character
+        assertTrue(this.canvas.getLineCharacter() == 'x');
+
+        this.canvas.setLineCharacter('#');
+        Line l = new Line(1, 1, 1, 4);
+        this.canvas.addShape(l);
+        assertEquals(this.canvas.render(),
+                "----------------------\n" +
+                        "|#                   |\n" +
+                        "|#                   |\n" +
+                        "|#                   |\n" +
+                        "|#                   |\n" +
+                        "|                    |\n" +
+                        "----------------------");
     }
 }

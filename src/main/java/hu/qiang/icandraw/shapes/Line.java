@@ -4,6 +4,7 @@
 package hu.qiang.icandraw.shapes;
 
 import com.google.common.base.Objects;
+import hu.qiang.icandraw.canvas.ICanvas;
 import hu.qiang.icandraw.exceptions.InvalidCommandParamException;
 import hu.qiang.icandraw.utils.Validator;
 
@@ -54,6 +55,23 @@ public class Line implements IShape {
 
     public int getY2() {
         return this.y2;
+    }
+
+    @Override
+    public void render(ICanvas canvas) {
+        char[][] canvasArray = canvas.getCanvasArray();
+        this.checkIsOutside(this.getX1(), this.getY1(), canvasArray);
+        this.checkIsOutside(this.getX2(), this.getY2(), canvasArray);
+
+        /* TODO to support non horizontal or vertical lines.
+         *
+         */
+        for (int row = y1 - 1; row <= y2 - 1 && row < canvasArray.length; row++) {
+            // column
+            for (int col = x1 - 1; col <= x2 - 1 && col < canvasArray[0].length; col++) {
+                canvasArray[row][col] = canvas.getLineCharacter();
+            }
+        }
     }
 
     @Override

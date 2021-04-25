@@ -12,5 +12,11 @@ import hu.qiang.icandraw.shapes.IShape;
 public interface ICanvas {
     void addShape(IShape shape);
 
+    char[][] getCanvasArray();
+
     String render();
+
+    void setLineCharacter(char lineChar);
+
+    char getLineCharacter();
 }

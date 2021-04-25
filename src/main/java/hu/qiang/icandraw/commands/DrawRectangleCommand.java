@@ -19,7 +19,7 @@ public class DrawRectangleCommand implements DrawCommand {
     public DrawRectangleCommand(String[] params) {
         if (params.length != 4)
             throw new InvalidCommandParamException(
-                    "Draw line command expects 4 params");
+                    "Draw rectangle command expects 4 params");
         try {
             this.x1 = NumberUtil.stringToPositiveInt(params[0]);
             this.y1 = NumberUtil.stringToPositiveInt(params[1]);
@@ -27,6 +27,11 @@ public class DrawRectangleCommand implements DrawCommand {
             this.y2 = NumberUtil.stringToPositiveInt(params[3]);
         } catch (InvalidCommandParamException e) {
             throw new InvalidCommandParamException("Number should be > 0");
+        }
+
+        if (x1 == x2 || y1 == y2) {
+            throw new InvalidCommandParamException(
+                    "Draw rectangle command expects two diagonal points not to be on same horizontal or vertical line");
         }
     }
 

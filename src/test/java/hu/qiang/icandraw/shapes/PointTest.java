@@ -3,6 +3,8 @@
  */
 package hu.qiang.icandraw.shapes;
 
+import hu.qiang.icandraw.canvas.Canvas;
+import hu.qiang.icandraw.canvas.ICanvas;
 import hu.qiang.icandraw.exceptions.InvalidCommandParamException;
 import org.junit.Rule;
 import org.junit.Test;
@@ -80,6 +82,21 @@ public class PointTest {
 
         assertFalse(p1 == p2);
         assertNotEquals(p1, p2);
+    }
+
+    @Test
+    public void testRender() {
+        Random random = new Random();
+        int height = random.nextInt(10) + 1;
+        int width = random.nextInt(10) + 1;
+        ICanvas canvas = new Canvas(width, height);
+        for (int y = 1; y <= height; y++) {
+            for (int x = 1; x <= width; x++) {
+                Point point = new Point(x, y);
+                point.render(canvas);
+                assertTrue(canvas.getCanvasArray()[y - 1][x - 1] == canvas.getLineCharacter());
+            }
+        }
     }
 
 }
